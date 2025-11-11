@@ -8,8 +8,7 @@ import { useObserve } from "@/hooks/use-observe"
 export default function Contact() {
   const ref = useObserve()
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
+    fullName: "",
     email: "",
     phone: "",
     message: "",
@@ -26,15 +25,23 @@ export default function Contact() {
     }))
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsSubmitting(true)
 
     try {
-      // Simulate form submission
-      await new Promise((resolve) => setTimeout(resolve, 1000))
+      await fetch(
+        "https://script.google.com/macros/s/AKfycbxFZOMj9tV0PC2Tg7f94O-_6l2fEu8G9dgQKN_tJw2CnbrVY17dmGqZkZa7uYqWAmE6/exec",
+        {
+          method: "POST",
+          body: JSON.stringify(formData),
+          headers: { "Content-Type": "application/json" },
+        }
+      )
+
       setSubmitStatus("success")
-      setFormData({ firstName: "", lastName: "", email: "", phone: "", message: "" })
+      setFormData({ fullName: "", email: "", phone: "", message: "" })
+      e.currentTarget.reset()
       setTimeout(() => setSubmitStatus("idle"), 5000)
     } catch {
       setSubmitStatus("error")
@@ -84,26 +91,15 @@ export default function Contact() {
 
         <div className="bg-white rounded-lg p-8 shadow-sm border border-border max-w-2xl mx-auto">
           <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="grid md:grid-cols-2 gap-4">
-              <input
-                type="text"
-                name="firstName"
-                placeholder="First Name"
-                value={formData.firstName}
-                onChange={handleChange}
-                required
-                className="px-4 py-3 rounded-lg border border-border focus:outline-none focus:ring-2 focus:ring-primary"
-              />
-              <input
-                type="text"
-                name="lastName"
-                placeholder="Last Name"
-                value={formData.lastName}
-                onChange={handleChange}
-                required
-                className="px-4 py-3 rounded-lg border border-border focus:outline-none focus:ring-2 focus:ring-primary"
-              />
-            </div>
+            <input
+              type="text"
+              name="fullName"
+              placeholder="Full Name"
+              value={formData.fullName}
+              onChange={handleChange}
+              required
+              className="w-full px-4 py-3 rounded-lg border border-border focus:outline-none focus:ring-2 focus:ring-primary"
+            />
 
             <input
               type="email"
