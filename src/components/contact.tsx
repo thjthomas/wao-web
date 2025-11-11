@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Mail, Phone, MapPin, Send } from "lucide-react"
 import { useObserve } from "@/hooks/use-observe"
 
@@ -17,6 +17,11 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
 
+  // Log submitStatus changes
+  useEffect(() => {
+    console.log("submitStatus changed to:", submitStatus)
+  }, [submitStatus])
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
     setFormData((prev) => ({
@@ -27,27 +32,59 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+    
+    // Store form reference before any async operations
+    const form = e.currentTarget
+    if (!form) {
+      console.error("Form element is null")
+      return
+    }
+
     setIsSubmitting(true)
+    console.log("Form submission started, submitStatus:", submitStatus)
 
     try {
-      await fetch(
-        "https://script.google.com/macros/s/AKfycbwCjEKaW30Ze4mRjBX2D3imE3shdxIxIlRjd1XK319GucBfrJM3gcQfGpzeHNGsG_et/exec",
-        {
-          method: "POST",
-          body: JSON.stringify(formData),
-          headers: { "Content-Type": "application/json" },
-        }
-      )
+      console.log("Sending form data:", formData)
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        body: JSON.stringify(formData),
+        headers: { "Content-Type": "application/json" },
+      })
 
+      console.log("Response status:", response.status, response.statusText)
+
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}))
+        console.error("Response not OK:", errorData)
+        throw new Error(`Failed to submit form: ${response.status} ${response.statusText}`)
+      }
+
+      const responseData = await response.json().catch(() => ({}))
+      console.log("Response data:", responseData)
+      console.log("Setting submitStatus to: success")
       setSubmitStatus("success")
       setFormData({ fullName: "", email: "", phone: "", message: "" })
-      e.currentTarget.reset()
-      setTimeout(() => setSubmitStatus("idle"), 5000)
-    } catch {
+      
+      // Reset form if it still exists
+      if (form) {
+        form.reset()
+      }
+      
+      setTimeout(() => {
+        console.log("Setting submitStatus to: idle")
+        setSubmitStatus("idle")
+      }, 5000)
+    } catch (error) {
+      console.error("Error in form submission:", error)
+      console.log("Setting submitStatus to: error")
       setSubmitStatus("error")
-      setTimeout(() => setSubmitStatus("idle"), 5000)
+      setTimeout(() => {
+        console.log("Setting submitStatus to: idle")
+        setSubmitStatus("idle")
+      }, 5000)
     } finally {
       setIsSubmitting(false)
+      console.log("Form submission finished, isSubmitting: false")
     }
   }
 
