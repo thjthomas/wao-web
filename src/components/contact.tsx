@@ -31,7 +31,7 @@ export default function Contact() {
 
     try {
       await fetch(
-        "https://script.google.com/macros/s/AKfycbxFZOMj9tV0PC2Tg7f94O-_6l2fEu8G9dgQKN_tJw2CnbrVY17dmGqZkZa7uYqWAmE6/exec",
+        "https://script.google.com/macros/s/AKfycbwCjEKaW30Ze4mRjBX2D3imE3shdxIxIlRjd1XK319GucBfrJM3gcQfGpzeHNGsG_et/exec",
         {
           method: "POST",
           body: JSON.stringify(formData),
