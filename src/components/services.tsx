@@ -9,8 +9,8 @@ export default function Services() {
   const services = [
     {
       icon: Shield,
-      name: "Life Insurance",
-      description: "Comprehensive life insurance coverage to protect your loved ones and secure their financial future",
+      name: "Legacy",
+      description: "Plan for an innovation legacy planning to pass down your financial assets, values, and life's wisdom to your future generations",
     },
     {
       icon: TrendingUp,
@@ -24,7 +24,7 @@ export default function Services() {
     },
     {
       icon: PiggyBank,
-      name: "Retirement Planning",
+      name: "Retirement",
       description: "Build a comfortable retirement with strategic planning and investment solutions",
     },
     {
