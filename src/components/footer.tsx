@@ -71,7 +71,7 @@ export default function Footer() {
         <div className="border-t border-primary-foreground/20 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center text-sm text-primary-foreground/80">
             <p className="flex items-center gap-2">
-              Made with <Heart size={16} className="text-accent" /> for your financial future
+              Made with <Heart size={16} className="text-white fill-white" /> for your financial future
             </p>
             <p>&copy; {currentYear} Winning As One. All rights reserved.</p>
           </div>

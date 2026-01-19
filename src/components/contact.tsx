@@ -32,7 +32,7 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    
+
     // Store form reference before any async operations
     const form = e.currentTarget
     if (!form) {
@@ -64,12 +64,12 @@ export default function Contact() {
       console.log("Setting submitStatus to: success")
       setSubmitStatus("success")
       setFormData({ fullName: "", email: "", phone: "", message: "" })
-      
+
       // Reset form if it still exists
       if (form) {
         form.reset()
       }
-      
+
       setTimeout(() => {
         console.log("Setting submitStatus to: idle")
         setSubmitStatus("idle")
@@ -117,8 +117,8 @@ export default function Contact() {
             <p className="text-foreground/70">+6012-4142168</p>
           </div>
 
-          <div className="bg-secondary/30 rounded-lg p-6 border border-secondary/40 text-center">
-            <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-secondary text-secondary-foreground mb-4">
+          <div className="bg-accent/5 rounded-lg p-6 border border-accent/20 text-center">
+            <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-accent text-accent-foreground mb-4">
               <MapPin size={24} />
             </div>
             <h3 className="font-semibold text-foreground mb-2">Location</h3>
