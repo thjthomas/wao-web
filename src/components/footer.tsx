@@ -23,11 +23,6 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#team" className="hover:text-primary-foreground transition-colors">
-                  Our Team
-                </a>
-              </li>
-              <li>
                 <a href="#services" className="hover:text-primary-foreground transition-colors">
                   Services
                 </a>
@@ -35,6 +30,11 @@ export default function Footer() {
               <li>
                 <a href="#contact" className="hover:text-primary-foreground transition-colors">
                   Contact
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-primary-foreground transition-colors">
+                  Back to top
                 </a>
               </li>
             </ul>
