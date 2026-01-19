@@ -25,7 +25,7 @@ export default function Hero() {
       {/* Content on top of background */}
       <div className="max-w-5xl mx-auto text-center relative z-10 py-20">
         <h1 className="text-5xl md:text-7xl font-bold text-balance mb-6 text-white animate-slide-down">
-          <span>Winning As One</span>
+          <span>Team Winning As One</span>
         </h1>
         <p
           className="text-xl md:text-2xl text-white mb-8 text-balance animate-fade-in"
