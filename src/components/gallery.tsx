@@ -140,30 +140,30 @@ export default function Gallery() {
                             </div>
 
                             {/* Hover overlay */}
-                            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 z-10 flex items-center justify-center">
+                            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 z-10 flex items-center justify-center pointer-events-none">
                                 <span className="opacity-0 group-hover:opacity-100 text-white text-sm bg-black/50 px-4 py-2 rounded-full transition-all">
                                     Click to enlarge
                                 </span>
                             </div>
-                        </div>
 
-                        {/* Navigation arrows - inside image on mobile, outside on desktop */}
-                        <button
-                            onClick={prevImage}
-                            disabled={currentIndex === 0 || isFlipping}
-                            className="absolute left-2 md:left-0 top-1/2 -translate-y-1/2 md:-translate-x-16 w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/80 md:bg-white shadow-lg flex items-center justify-center hover:bg-white disabled:opacity-30 disabled:cursor-not-allowed transition-all z-30"
-                            aria-label="Previous image"
-                        >
-                            <ChevronLeft size={20} className="md:w-6 md:h-6" />
-                        </button>
-                        <button
-                            onClick={nextImage}
-                            disabled={currentIndex === galleryImages.length - 1 || isFlipping}
-                            className="absolute right-2 md:right-0 top-1/2 -translate-y-1/2 md:translate-x-16 w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/80 md:bg-white shadow-lg flex items-center justify-center hover:bg-white disabled:opacity-30 disabled:cursor-not-allowed transition-all z-30"
-                            aria-label="Next image"
-                        >
-                            <ChevronRight size={20} className="md:w-6 md:h-6" />
-                        </button>
+                            {/* Navigation arrows - inside image, centered vertically */}
+                            <button
+                                onClick={(e) => { e.stopPropagation(); prevImage(); }}
+                                disabled={currentIndex === 0 || isFlipping}
+                                className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/80 hover:bg-white shadow-lg flex items-center justify-center disabled:opacity-30 disabled:cursor-not-allowed transition-all z-30"
+                                aria-label="Previous image"
+                            >
+                                <ChevronLeft size={20} />
+                            </button>
+                            <button
+                                onClick={(e) => { e.stopPropagation(); nextImage(); }}
+                                disabled={currentIndex === galleryImages.length - 1 || isFlipping}
+                                className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/80 hover:bg-white shadow-lg flex items-center justify-center disabled:opacity-30 disabled:cursor-not-allowed transition-all z-30"
+                                aria-label="Next image"
+                            >
+                                <ChevronRight size={20} />
+                            </button>
+                        </div>
 
                         {/* Page counter */}
                         <div className="text-center mt-6 text-gray-600 font-medium">
