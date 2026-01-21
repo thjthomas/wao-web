@@ -28,6 +28,11 @@ export default function Footer() {
                 </a>
               </li>
               <li>
+                <a href="#gallery" className="hover:text-primary-foreground transition-colors">
+                  Gallery
+                </a>
+              </li>
+              <li>
                 <a href="#contact" className="hover:text-primary-foreground transition-colors">
                   Contact
                 </a>

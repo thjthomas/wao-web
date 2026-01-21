@@ -63,6 +63,12 @@ export default function Navigation() {
               Services
             </button>
             <button
+              onClick={() => scrollToSection("gallery")}
+              className="text-foreground hover:text-primary transition-colors"
+            >
+              Gallery
+            </button>
+            <button
               onClick={() => scrollToSection("contact")}
               className="bg-primary text-primary-foreground px-6 py-2 rounded-full hover:bg-accent transition-colors"
             >
@@ -104,6 +110,12 @@ export default function Navigation() {
               className="block w-full text-left px-4 py-2 text-foreground hover:bg-secondary-foreground/10"
             >
               Services
+            </button>
+            <button
+              onClick={() => scrollToSection("gallery")}
+              className="block w-full text-left px-4 py-2 text-foreground hover:bg-secondary-foreground/10"
+            >
+              Gallery
             </button>
             <button
               onClick={() => scrollToSection("contact")}

@@ -283,3 +283,60 @@ html {
 .animate-in.stagger > *:nth-child(10) {
   animation-delay: 1s;
 }
+
+/* Page flip animations for gallery */
+@keyframes flipRight {
+  0% {
+    transform: perspective(1000px) rotateY(0deg);
+  }
+  100% {
+    transform: perspective(1000px) rotateY(-90deg);
+  }
+}
+
+@keyframes flipLeft {
+  0% {
+    transform: perspective(1000px) rotateY(0deg);
+  }
+  100% {
+    transform: perspective(1000px) rotateY(90deg);
+  }
+}
+
+@keyframes flipInRight {
+  0% {
+    transform: perspective(1000px) rotateY(90deg);
+  }
+  100% {
+    transform: perspective(1000px) rotateY(0deg);
+  }
+}
+
+@keyframes flipInLeft {
+  0% {
+    transform: perspective(1000px) rotateY(-90deg);
+  }
+  100% {
+    transform: perspective(1000px) rotateY(0deg);
+  }
+}
+
+.animate-flip-right {
+  animation: flipRight 0.3s ease-in forwards, flipInRight 0.3s ease-out 0.3s forwards;
+  transform-origin: left center;
+}
+
+.animate-flip-left {
+  animation: flipLeft 0.3s ease-in forwards, flipInLeft 0.3s ease-out 0.3s forwards;
+  transform-origin: right center;
+}
+
+/* Perspective utility */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+/* Custom duration */
+.duration-600 {
+  transition-duration: 600ms;
+}
