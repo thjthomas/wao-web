@@ -139,9 +139,6 @@ export default function Gallery() {
                                 />
                             </div>
 
-                            {/* Page fold/crease effect */}
-                            <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-black/10 to-transparent z-20"></div>
-
                             {/* Hover overlay */}
                             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 z-10 flex items-center justify-center">
                                 <span className="opacity-0 group-hover:opacity-100 text-white text-sm bg-black/50 px-4 py-2 rounded-full transition-all">
@@ -150,22 +147,22 @@ export default function Gallery() {
                             </div>
                         </div>
 
-                        {/* Navigation arrows */}
+                        {/* Navigation arrows - inside image on mobile, outside on desktop */}
                         <button
                             onClick={prevImage}
                             disabled={currentIndex === 0 || isFlipping}
-                            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 md:-translate-x-16 w-10 h-10 rounded-full bg-white shadow-lg flex items-center justify-center hover:bg-gray-50 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+                            className="absolute left-2 md:left-0 top-1/2 -translate-y-1/2 md:-translate-x-16 w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/80 md:bg-white shadow-lg flex items-center justify-center hover:bg-white disabled:opacity-30 disabled:cursor-not-allowed transition-all z-30"
                             aria-label="Previous image"
                         >
-                            <ChevronLeft size={24} />
+                            <ChevronLeft size={20} className="md:w-6 md:h-6" />
                         </button>
                         <button
                             onClick={nextImage}
                             disabled={currentIndex === galleryImages.length - 1 || isFlipping}
-                            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 md:translate-x-16 w-10 h-10 rounded-full bg-white shadow-lg flex items-center justify-center hover:bg-gray-50 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+                            className="absolute right-2 md:right-0 top-1/2 -translate-y-1/2 md:translate-x-16 w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/80 md:bg-white shadow-lg flex items-center justify-center hover:bg-white disabled:opacity-30 disabled:cursor-not-allowed transition-all z-30"
                             aria-label="Next image"
                         >
-                            <ChevronRight size={24} />
+                            <ChevronRight size={20} className="md:w-6 md:h-6" />
                         </button>
 
                         {/* Page counter */}
