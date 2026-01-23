@@ -120,6 +120,7 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-geist, ui-sans-serif, system-ui, sans-serif);
@@ -154,6 +155,7 @@ html {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -164,6 +166,7 @@ html {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -175,6 +178,7 @@ html {
     opacity: 0;
     transform: translateY(-30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -186,6 +190,7 @@ html {
     opacity: 0;
     transform: scale(0.95);
   }
+
   to {
     opacity: 1;
     transform: scale(1);
@@ -193,7 +198,7 @@ html {
 }
 
 .animate-fade-in {
-  animation: fadeIn 0.6s ease-out;
+  animation: fadeIn 1.2s ease-out;
 }
 
 .animate-slide-up {
@@ -201,46 +206,55 @@ html {
 }
 
 .animate-slide-down {
-  animation: slideDown 0.6s ease-out;
+  animation: slideDown 1.2s ease-out;
 }
 
 .animate-scale-in {
-  animation: scaleIn 0.6s ease-out;
+  animation: scaleIn 1s ease-out;
 }
 
 /* Stagger animation delays for child elements */
-.animate-stagger > * {
+.animate-stagger>* {
   animation: slideUp 0.6s ease-out backwards;
 }
 
-.animate-stagger > *:nth-child(1) {
+.animate-stagger>*:nth-child(1) {
   animation-delay: 0.1s;
 }
-.animate-stagger > *:nth-child(2) {
+
+.animate-stagger>*:nth-child(2) {
   animation-delay: 0.2s;
 }
-.animate-stagger > *:nth-child(3) {
+
+.animate-stagger>*:nth-child(3) {
   animation-delay: 0.3s;
 }
-.animate-stagger > *:nth-child(4) {
+
+.animate-stagger>*:nth-child(4) {
   animation-delay: 0.4s;
 }
-.animate-stagger > *:nth-child(5) {
+
+.animate-stagger>*:nth-child(5) {
   animation-delay: 0.5s;
 }
-.animate-stagger > *:nth-child(6) {
+
+.animate-stagger>*:nth-child(6) {
   animation-delay: 0.6s;
 }
-.animate-stagger > *:nth-child(7) {
+
+.animate-stagger>*:nth-child(7) {
   animation-delay: 0.7s;
 }
-.animate-stagger > *:nth-child(8) {
+
+.animate-stagger>*:nth-child(8) {
   animation-delay: 0.8s;
 }
-.animate-stagger > *:nth-child(9) {
+
+.animate-stagger>*:nth-child(9) {
   animation-delay: 0.9s;
 }
-.animate-stagger > *:nth-child(10) {
+
+.animate-stagger>*:nth-child(10) {
   animation-delay: 1s;
 }
 
@@ -249,38 +263,47 @@ html {
   animation: slideUp 0.6s ease-out forwards !important;
 }
 
-.animate-in.stagger > * {
+.animate-in.stagger>* {
   animation: slideUp 0.6s ease-out backwards;
 }
 
-.animate-in.stagger > *:nth-child(1) {
+.animate-in.stagger>*:nth-child(1) {
   animation-delay: 0.1s;
 }
-.animate-in.stagger > *:nth-child(2) {
+
+.animate-in.stagger>*:nth-child(2) {
   animation-delay: 0.2s;
 }
-.animate-in.stagger > *:nth-child(3) {
+
+.animate-in.stagger>*:nth-child(3) {
   animation-delay: 0.3s;
 }
-.animate-in.stagger > *:nth-child(4) {
+
+.animate-in.stagger>*:nth-child(4) {
   animation-delay: 0.4s;
 }
-.animate-in.stagger > *:nth-child(5) {
+
+.animate-in.stagger>*:nth-child(5) {
   animation-delay: 0.5s;
 }
-.animate-in.stagger > *:nth-child(6) {
+
+.animate-in.stagger>*:nth-child(6) {
   animation-delay: 0.6s;
 }
-.animate-in.stagger > *:nth-child(7) {
+
+.animate-in.stagger>*:nth-child(7) {
   animation-delay: 0.7s;
 }
-.animate-in.stagger > *:nth-child(8) {
+
+.animate-in.stagger>*:nth-child(8) {
   animation-delay: 0.8s;
 }
-.animate-in.stagger > *:nth-child(9) {
+
+.animate-in.stagger>*:nth-child(9) {
   animation-delay: 0.9s;
 }
-.animate-in.stagger > *:nth-child(10) {
+
+.animate-in.stagger>*:nth-child(10) {
   animation-delay: 1s;
 }
 
@@ -289,6 +312,7 @@ html {
   0% {
     transform: perspective(1000px) rotateY(0deg);
   }
+
   100% {
     transform: perspective(1000px) rotateY(-90deg);
   }
@@ -298,6 +322,7 @@ html {
   0% {
     transform: perspective(1000px) rotateY(0deg);
   }
+
   100% {
     transform: perspective(1000px) rotateY(90deg);
   }
@@ -307,6 +332,7 @@ html {
   0% {
     transform: perspective(1000px) rotateY(90deg);
   }
+
   100% {
     transform: perspective(1000px) rotateY(0deg);
   }
@@ -316,6 +342,7 @@ html {
   0% {
     transform: perspective(1000px) rotateY(-90deg);
   }
+
   100% {
     transform: perspective(1000px) rotateY(0deg);
   }
