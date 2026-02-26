@@ -7,12 +7,15 @@ import { X, ChevronLeft, ChevronRight } from "lucide-react"
 // Your team event photos
 const galleryImages = [
     { id: 1, src: "/gallery/1.jpeg", alt: "Team Event 1" },
-    { id: 2, src: "/gallery/2.JPG", alt: "Team Event 2" },
-    { id: 3, src: "/gallery/3.png", alt: "Team Event 3" },
+    { id: 2, src: "/gallery/2.jpeg", alt: "Team Event 2" },
+    { id: 3, src: "/gallery/3.JPG", alt: "Team Event 3" },
     { id: 4, src: "/gallery/4.png", alt: "Team Event 4" },
-    { id: 5, src: "/gallery/5.jpg", alt: "Team Event 5" },
+    { id: 5, src: "/gallery/5.png", alt: "Team Event 5" },
     { id: 6, src: "/gallery/6.jpg", alt: "Team Event 6" },
-    { id: 7, src: "/gallery/7.png", alt: "Team Event 7" },
+    { id: 7, src: "/gallery/7.jpg", alt: "Team Event 7" },
+    { id: 8, src: "/gallery/8.png", alt: "Team Event 8" },
+    { id: 9, src: "/gallery/9.jpeg", alt: "Team Event 9" },
+    { id: 10, src: "/gallery/10.jpeg", alt: "Team Event 10" },
 ]
 
 export default function Gallery() {
