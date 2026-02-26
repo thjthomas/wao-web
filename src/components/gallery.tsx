@@ -214,6 +214,22 @@ export default function Gallery() {
                             ))}
                         </div>
                     </div>
+
+                    {/* Team Introduction Video */}
+                    <div className="mt-16">
+                        <div
+                            className="relative w-full overflow-hidden rounded-2xl shadow-2xl"
+                            style={{ paddingBottom: "56.25%" }}
+                        >
+                            <iframe
+                                className="absolute top-0 left-0 w-full h-full"
+                                src="https://www.youtube.com/embed/lJpjr3pfnmw"
+                                title="Meet Our Team - Winning As One"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowFullScreen
+                            />
+                        </div>
+                    </div>
                 </div>
             </section>
 
