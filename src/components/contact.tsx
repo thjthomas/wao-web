@@ -114,7 +114,7 @@ export default function Contact() {
               <Phone size={24} />
             </div>
             <h3 className="font-semibold text-foreground mb-2">Phone</h3>
-            <p className="text-foreground/70">+6012-4142168</p>
+            <p className="text-foreground/70">+6018-2012168</p>
           </div>
 
           <div className="bg-accent/5 rounded-lg p-6 border border-accent/20 text-center">
